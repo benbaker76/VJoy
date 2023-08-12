@@ -1,0 +1,404 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_KEY2JOY             ICON    DISCARDABLE     "Key2Joy.ICO"
+IDI_SMALL               ICON    DISCARDABLE     "SMALL.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Open",                        IDM_OPEN
+        MENUITEM "&About Key2Joy...",           IDM_ABOUT
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_JEY2JOY ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  22, 17, 186, 40
+STYLE DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "System"
+BEGIN
+    ICON            IDI_KEY2JOY,IDC_MYICON,14,9,20,20
+    LTEXT           "Key2Joy Version 1.0",IDC_STATIC,49,6,83,8
+    LTEXT           "Written by Ben Baker",IDC_STATIC,49,16,83,8
+    DEFPUSHBUTTON   "OK",IDOK,139,6,30,11,WS_GROUP
+    LTEXT           "Copyright (C) 2009",IDC_STATIC,49,26,83,8
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "Key2Joy"
+    IDC_KEY2JOY             "KEY2JOY"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOGEX 0, 0, 417, 231
+STYLE DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+CAPTION "Key2Joy Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Enabled",IDC_ENABLED,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,7,45,10
+    LTEXT           "Joystick Device:",IDC_STATIC,75,7,65,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_JOYDEVICE,145,5,130,32,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Block Keys",IDC_BLOCKKEYS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,286,7,55,10
+    LTEXT           "Left",IDC_STATIC,5,27,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_LEFT,51,25,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_LEFT,120,24,19,15
+    LTEXT           "Right",IDC_STATIC,5,43,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_RIGHT,51,40,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_RIGHT,120,39,19,15
+    LTEXT           "Up",IDC_STATIC,5,58,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_UP,51,55,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_UP,120,54,19,15
+    LTEXT           "Down",IDC_STATIC,5,73,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_DOWN,51,70,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_DOWN,120,69,19,15
+    LTEXT           "Z Axis -",IDC_STATIC,5,88,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_ZAXIS_NEG,51,85,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_ZAXIS_NEG,120,84,19,15
+    LTEXT           "Z Axis +",IDC_STATIC,5,103,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_ZAXIS_POS,51,100,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_ZAXIS_POS,120,99,19,15
+    LTEXT           "Z Rotation -",IDC_STATIC,5,118,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_ZROTATE_NEG,51,115,64,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDB_ZROTATE_NEG,120,114,19,15
+    LTEXT           "Z Rotation +",IDC_STATIC,5,134,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_ZROTATE_POS,51,130,64,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDB_ZROTATE_POS,120,129,19,15
+    LTEXT           "Slider -",IDC_STATIC,5,148,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_SLIDER_NEG,51,145,64,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDB_SLIDER_NEG,120,144,19,15
+    LTEXT           "Slider +",IDC_STATIC,5,163,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_SLIDER_POS,51,160,64,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDB_SLIDER_POS,120,159,19,15
+    LTEXT           "POV Left",IDC_STATIC,5,178,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_POV0_LEFT,51,175,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_POV0_LEFT,120,174,19,15
+    LTEXT           "POV Right",IDC_STATIC,5,193,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_POV0_RIGHT,51,190,64,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDB_POV0_RIGHT,120,189,19,15
+    LTEXT           "POV Up",IDC_STATIC,140,27,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_POV0_UP,186,25,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_POV0_UP,255,24,19,15
+    LTEXT           "POV Down",IDC_STATIC,140,43,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_POV0_DOWN,186,40,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_POV0_DOWN,255,39,19,15
+    LTEXT           "Button 1",IDC_STATIC,140,58,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON1,186,55,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON1,255,54,19,15
+    LTEXT           "Button 2",IDC_STATIC,140,73,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON2,186,70,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON2,255,69,19,15
+    LTEXT           "Button 3",IDC_STATIC,140,88,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON3,186,85,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON3,255,84,19,15
+    LTEXT           "Button 4",IDC_STATIC,140,103,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON4,186,100,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON4,255,99,19,15
+    LTEXT           "Button 5",IDC_STATIC,140,118,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON5,186,115,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON5,255,114,19,15
+    LTEXT           "Button 6",IDC_STATIC,140,134,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON6,186,130,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON6,255,129,19,15
+    LTEXT           "Button 7",IDC_STATIC,140,148,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON7,186,145,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON7,255,144,19,15
+    LTEXT           "Button 8",IDC_STATIC,140,163,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON8,186,160,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON8,255,159,19,15
+    LTEXT           "Button 9",IDC_STATIC,140,178,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON9,186,175,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON9,255,174,19,15
+    LTEXT           "Button 10",IDC_STATIC,140,193,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON10,186,190,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON10,255,189,19,15
+    LTEXT           "Button 11",IDC_STATIC,275,27,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON11,321,25,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON11,390,24,19,15
+    LTEXT           "Button 12",IDC_STATIC,275,43,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON12,321,40,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON12,390,39,19,15
+    LTEXT           "Button 13",IDC_STATIC,275,58,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON13,321,55,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON13,390,54,19,15
+    LTEXT           "Button 14",IDC_STATIC,275,73,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON14,321,70,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON14,390,69,19,15
+    LTEXT           "Button 15",IDC_STATIC,275,88,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON15,321,85,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON15,390,84,19,15
+    LTEXT           "Button 16",IDC_STATIC,275,103,40,10,0,WS_EX_RIGHT
+    COMBOBOX        IDC_BUTTON16,321,100,64,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "...",IDB_BUTTON16,390,99,19,15
+    CONTROL         131,IDC_STATIC,"Static",SS_BITMAP | WS_BORDER,305,120,85,
+                    79
+    DEFPUSHBUTTON   "Open Ini",IDB_OPEN,5,210,50,14
+    DEFPUSHBUTTON   "Save Ini",IDB_SAVE,60,210,50,14
+    CONTROL         "Launch on Startup",IDC_LAUNCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,125,212,80,10
+    DEFPUSHBUTTON   "OK",IDB_OK,235,210,50,14
+    PUSHBUTTON      "Close",IDB_CLOSE,360,210,50,14
+    CONTROL         "Auto Center",IDC_AUTOCENTER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,342,7,55,10
+END
+
+IDD_INPUT DIALOG DISCARDABLE  0, 0, 122, 55
+STYLE DS_MODALFRAME | DS_CENTER | WS_CAPTION | WS_SYSMENU
+CAPTION "Input"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,35,30,50,14,NOT WS_TABSTOP
+    CTEXT           "Press Any Key",IDC_STATIC,5,15,105,10
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 410
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 224
+    END
+
+    IDD_INPUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 115
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "0c0904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "Key2Joy\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Key2Joy\0"
+            VALUE "LegalCopyright", "Copyright © 2009\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Key2Joy.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "  Key2Joy\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0xc09, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+IDR_RT_MANIFEST1        24      DISCARDABLE     "Key2Joy.exe.manifest"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

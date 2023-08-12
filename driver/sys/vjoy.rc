@@ -1,0 +1,16 @@
+#include <windows.h>
+
+#include <ntverp.h>
+
+#define	VER_FILETYPE	            VFT_DRV
+#define	VER_FILESUBTYPE	            VFT2_DRV_SYSTEM
+#define VER_COMPANYNAME_STR         "Ben Baker"
+#define VER_LEGALCOPYRIGHT_YEARS    "2012"
+#define VER_LEGALCOPYRIGHT_STR      L"\251 Ben Baker. All rights reserved."
+#define VER_PRODUCTNAME_STR         "VJoy Virtual Joystick Driver"
+#define VER_PRODUCTVERSION          1,02,00,000
+#define VER_PRODUCTVERSION_STR      "1.20"
+#define VER_INTERNALNAME_STR		"vjoy.sys"
+#define VER_FILEDESCRIPTION_STR     "VJoy Virtual Joystick Driver"
+
+#include "common.ver"

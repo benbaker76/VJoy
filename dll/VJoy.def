@@ -1,0 +1,5 @@
+LIBRARY VJoy
+EXPORTS
+	VJoy_Initialize			@1
+	VJoy_Shutdown			@2
+	VJoy_UpdateJoyState		@3

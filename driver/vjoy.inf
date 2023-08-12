@@ -1,0 +1,146 @@
+[Version]
+Signature="$CHICAGO$"
+Class=HIDClass
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider=%VENDOR%
+CatalogFile=vjoy.cat
+LayoutFile=layout.inf
+DriverVer=10/12/2012,7.2.0000.0
+
+;
+;   Layout.inf (etc.) list all files shipped with the operating system so the 
+;   source description sections are only needed if other files are needed.
+;   
+;   In order to use IHV drivers, the SourceDisksNames section must list the 
+;   disk(s) containing the drivers and the SourceDisksFiles section must list 
+;   which disk number each file to be copied is found on.
+;   Disk number 99 is used to avoid a conflict with the disk numbers defined 
+;   in layout.inf
+;
+;   Files used in a driver installation need to be digitally signed otherwise 
+;   installation may fail.  See documentation elsewhere in the DDK regarding 
+;   driver signing.
+
+[SourceDisksFiles]
+vjoy.sys = 99
+
+
+[SourceDisksNames.x86]
+99 = %DISK_NAME%,,,\i386
+
+[SourceDisksNames.ia64]
+99 = %DISK_NAME%,,,\ia64
+
+[SourceDisksNames.amd64]
+99 = %DISK_NAME%,,,\amd64
+
+
+[DestinationDirs]
+CopyFilesSYS = 12     ; should it be 10 to take care of 98 stuff??????
+CopyFilesDLL = 11     ; %SystemRoot%\system or system32 - 98 or Win2000
+CopyFilesSYS_98 = 10, system32/drivers
+
+[Manufacturer]
+%VENDOR%=Vendor, NTx86, NTia64, NTamd64
+
+; For Win2K
+[Vendor]
+%VJoyMini%     = VJoyMini.Inst, VJOY\VID_FEED&PID_FACE
+%VJoyDevice%   = VJoyDevice.Inst, HID\VJoy
+
+; For XP and later
+[Vendor.NTx86]
+%VJoyMini%     = VJoyMini.Inst, VJOY\VID_FEED&PID_FACE
+%VJoyDevice%   = VJoyDevice.Inst, HID\VJoy
+
+[Vendor.NTia64]
+%VJoyMini%     = VJoyMini.Inst, VJOY\VID_FEED&PID_FACE
+%VJoyDevice%   = VJoyDevice.Inst, HID\VJoy
+
+[Vendor.NTamd64]
+%VJoyMini%     = VJoyMini.Inst, VJOY\VID_FEED&PID_FACE
+%VJoyDevice%   = VJoyDevice.Inst, HID\VJoy
+
+
+[ControlFlags]
+ExcludeFromSelect  = HID\VJoy
+
+;===============================================================
+;   VJoyMini (Root Enumerated Hid Device) install section
+;===============================================================
+[VJoyMini.Inst]
+CopyFiles = CopyFilesSYS_98, CopyFilesDLL
+AddReg    = VJoyMini_98me.AddReg
+
+[VJoyMini.Inst.NT]
+CopyFiles = CopyFilesSYS, CopyFilesDLL
+
+[VJoyMini.Inst.NT.HW]
+AddReg = VJoyMini_Parameters.AddReg 
+
+[VJoyMini.Inst.NT.Services]
+AddService = vhidmini,0x00000002,vhidmini_Service_Inst,
+
+
+[CopyFilesSYS]
+vjoy.sys
+;HidClass.sys,,,0x00000010
+;HidParse.sys,,,0x00000010
+
+[CopyFilesSYS_98]
+vjoy.sys
+HidClass.sys
+HidParse.sys
+
+[CopyFilesDLL]
+;Hid.dll,,,0x00000010
+
+[VJoyMini_98me.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,"vjoy.sys"
+
+[vhidmini_Service_Inst]
+DisplayName    = %VJoyMini%
+ServiceType    = %SERVICE_KERNEL_DRIVER% 
+StartType      = %SERVICE_DEMAND_START% 
+ErrorControl   = %SERVICE_ERROR_IGNORE% 
+ServiceBinary  = %12%\vjoy.sys 
+
+;===============================================================
+;   VJoyDevice (Virtual Hid Device) install section
+; - Only a Null service is installed.
+;===============================================================
+[VJoyDevice.Inst]
+
+[VJoyDevice.Inst.NT]
+
+[VJoyDevice.Inst.NT.Services]
+AddService = ,0x00000002,   ; NULL Service
+
+
+;================================================================
+[Strings]
+;  *******Localizable Strings*******
+VENDOR         = "Ben Baker"
+VJoyMini       = "VJoy Virtual Joystick"
+VJoyDevice     = "VJoy Virtual Joystick Device"
+DISK_NAME      = "VJoy Virtual Joystick Device Install Disk"
+;  *******Non Localizable Strings*******
+
+SERVICE_BOOT_START     = 0x0 
+SERVICE_SYSTEM_START   = 0x1 
+SERVICE_AUTO_START     = 0x2 
+SERVICE_DEMAND_START   = 0x3 
+SERVICE_DISABLED       = 0x4 
+
+SERVICE_KERNEL_DRIVER  = 0x1 
+SERVICE_ERROR_IGNORE   = 0x0 
+SERVICE_ERROR_NORMAL   = 0x1 
+SERVICE_ERROR_SEVERE   = 0x2 
+SERVICE_ERROR_CRITICAL = 0x3 
+
+REG_EXPAND_SZ          = 0x00020000 
+REG_DWORD              = 0x00010001 
+REG_MULTI_SZ           = 0x00010000
+REG_BINARY             = 0x00000001
+REG_SZ                 = 0x00000000
